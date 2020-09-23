@@ -64,10 +64,17 @@ const  App = () => {
         itemArray[2] !== "empty"){
           setWinMessage(`${itemArray[2]} won`)
         }
-      // else{
-      //   setWinMessage("Better Luck Next Time!!")
-      // }
-  }
+      else{
+          
+            if (itemArray[0] !== "empty" && itemArray[1] !== "empty" &&
+            itemArray[2] !== "empty" && itemArray[3] !== "empty" && itemArray[4] !== "empty"
+            &&itemArray[5] !== "empty" && itemArray[6] !== "empty" && itemArray[7] !== "empty"
+            && itemArray[8] !== "empty"){
+              setWinMessage(`Better Luck Next Time!!`)
+            }
+          }
+      }
+  
 
   const changeItem = itemNumber =>{
     if (winMessage) {
@@ -79,7 +86,7 @@ const  App = () => {
       setIsCross(!isCross)
       
     }else{
-      return toast("already filled", {type: "erroe"})
+      return toast("already filled", {type: "error"})
     }
 
     checkIsWinner();
@@ -119,6 +126,6 @@ const  App = () => {
       </Row>
     </Container>
   );
-}
 
+}
 export default App;
